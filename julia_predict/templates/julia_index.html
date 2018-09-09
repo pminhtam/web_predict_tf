@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <form method="post" action="/julia/index" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="file" name="img" accept="image/png, image/jpeg" required>
+    <button type="submit">Submit</button>
+    </form>
+    <img src="{% static '../media/img.png '%}">
+    <div>
+        <p>Đây là số: </p>
+        {{ result }}
+    </div>
+{% endblock %}
